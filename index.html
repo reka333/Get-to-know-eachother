@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi ketten · Beszélgetős játék</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="petals" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <p class="eyebrow">beszélgetős társasjáték</p>
+    <h1>Mi <span>ketten</span></h1>
+    <div class="players">
+      <input id="p1" maxlength="16" placeholder="a te neved" aria-label="Első játékos neve">
+      <span class="amp">&amp;</span>
+      <input id="p2" maxlength="16" placeholder="az ő neve" aria-label="Második játékos neve">
+    </div>
+  </header>
+
+  <nav class="cats" id="cats" aria-label="Kategóriák"></nav>
+
+  <main class="stage">
+    <section class="info" id="info">
+      <div class="cover"><img id="coverImg" alt=""></div>
+      <div class="info-text">
+        <p class="cat-num" id="catNum"></p>
+        <h2 id="catTitle"></h2>
+        <p class="cat-tags" id="catTags"></p>
+        <div class="progress"><div class="bar"><i id="progBar"></i></div><span id="progTxt"></span></div>
+        <button class="ghost" id="resetBtn">Kérdések újrakeverése</button>
+      </div>
+    </section>
+
+    <section class="wheel-wrap">
+      <div class="turn" id="turn"></div>
+      <div class="wheel-box">
+        <div class="pointer" aria-hidden="true"></div>
+        <svg id="wheel" viewBox="0 0 400 400" role="img" aria-label="Kerék"></svg>
+        <button class="spin" id="spinBtn"><span>Pörgess</span></button>
+      </div>
+      <p class="hint">nyomd meg a kereket, vagy a szóközt ♡</p>
+    </section>
+  </main>
+
+  <div class="overlay" id="overlay" hidden>
+    <article class="card" role="dialog" aria-modal="true" aria-labelledby="qText">
+      <div class="polaroids" id="polaroids"></div>
+      <p class="card-meta" id="qMeta"></p>
+      <h3 id="qText"></h3>
+      <p class="answerer" id="answerer"></p>
+      <div class="card-actions">
+        <button class="primary" id="nextBtn">Következő kérdés</button>
+        <button class="ghost" id="closeBtn">Vissza a kerékhez</button>
+      </div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
